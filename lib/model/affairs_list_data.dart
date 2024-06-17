@@ -13,24 +13,29 @@ class AffairsListData {
 
   static List<AffairsListData> affairsList = <AffairsListData>[
     AffairsListData(
-      imagePath: 'assets/fitness_app/A7.png',
+      imagePath: 'assets/fitness_app/r18.png',
       titleTxt: 'ข้อมูลนักศึกษาวิชาทหาร',
       subTxt:
           'ข้อมูลลงทะเบียนฝึกนักศึกษาวิชาทหาร และ ข้อมูลขอผ่อนผันการเกณฑ์ทหาร ',
       navigateScreen: '/rotcs',
     ),
-    //   AffairsListData(
-    //   imagePath: 'assets/fitness_app/A7.png',
-    //   titleTxt: 'ข้อมูลค่าปรับหอสมุด',
-    //   subTxt:
-    //       'ข้อมูลค่าปรับหอสมุด ',
-    //   navigateScreen: '/rotcs',
-    // ),
-    // AffairsListData(
-    //   imagePath: 'assets/fitness_app/A2.png',
-    //   titleTxt: 'ข้อมูลทุนของนักศึกษา',
-    //   subTxt: 'ข้อมูลทุนของนักศึกษา',
-    //   navigateScreen: '/rotcs',
-    // ),
+    AffairsListData(
+      imagePath: 'assets/fitness_app/r18.png',
+      titleTxt: 'ข้อมูลกรมธรรม์ประกันภัย',
+      subTxt: 'ข้อมูลกรมธรรม์ประกันภัย สำหรับกิจกรรมต่างๆของนักศึกษา',
+      navigateScreen: '/insurance',
+    ),
+    AffairsListData(
+      imagePath: 'assets/fitness_app/r18.png',
+      titleTxt: 'ข้อมูลทุนของนักศึกษา',
+      subTxt: 'ข้อมูลทุนของนักศึกษา',
+      navigateScreen: '/rotcs',
+    ),
+    AffairsListData(
+      imagePath: 'assets/fitness_app/r18.png',
+      titleTxt: 'ข้อมูลร่วมกิจกรรมต่างๆ ของนักศึกษา',
+      subTxt: 'ข้อมูลร่วมกิจกรรมต่างๆ ของนักศึกษา',
+      navigateScreen: '/rotcs',
+    ),
   ];
 }

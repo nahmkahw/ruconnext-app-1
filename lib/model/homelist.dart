@@ -1,3 +1,4 @@
+import 'package:th.ac.ru.uSmart/affairs/affairs_home_screen.dart';
 import 'package:th.ac.ru.uSmart/design_course/home_design_course.dart';
 import 'package:th.ac.ru.uSmart/fitness_app/fitness_app_home_screen.dart';
 import 'package:th.ac.ru.uSmart/grade/grade_app_home_screen.dart';
@@ -101,6 +102,12 @@ class HomeList {
       iconsData: Icons.app_registration,
       color: Colors.brown,
       navigateScreen: RunewsScreen(),
+    ),
+    HomeList(
+      imagePath: 'assets/fitness_app/z6.png',
+      iconsData: Icons.app_registration,
+      color: Colors.brown,
+      navigateScreen: AffairsHomeScreen(),
     ),
     HomeList(
       imagePath: 'assets/fitness_app/A15.png',

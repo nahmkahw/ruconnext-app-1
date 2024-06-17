@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:th.ac.ru.uSmart/affairs/affairs_list_view.dart';
 import 'package:th.ac.ru.uSmart/fitness_app/fitness_app_theme.dart';
 import 'package:th.ac.ru.uSmart/model/affairs_list_data.dart';
 import 'package:th.ac.ru.uSmart/other/other_list_view.dart';
+import 'package:th.ac.ru.uSmart/providers/insurance_provider.dart';
+import 'package:th.ac.ru.uSmart/providers/rotcs_provider.dart';
 import 'package:th.ac.ru.uSmart/ruconnext_app_theme.dart';
 
 class AffairsHomeScreen extends StatefulWidget {
@@ -22,8 +25,9 @@ class _AffairsHomeScreenState extends State<AffairsHomeScreen>
 
   @override
   void initState() {
+    Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 400), vsync: this);
+        duration: const Duration(milliseconds: 1000), vsync: this);
     super.initState();
     getData();
     //Noti.initialize(flutterLocalNotificationsPlugin);
@@ -179,10 +183,14 @@ class _AffairsHomeScreenState extends State<AffairsHomeScreen>
             ),
             Expanded(
               child: Center(
-                child: Text(
-                  'เมนูสำหรับกองกิจการนักศึกษา',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
+                child: FittedBox(
+                  fit: BoxFit.fitHeight,
+                  child: Text(
+                    'เมนูสำหรับกองกิจการนักศึกษา',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),

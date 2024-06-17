@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:th.ac.ru.uSmart/app_theme.dart';
+import 'package:th.ac.ru.uSmart/fitness_app/fitness_app_theme.dart';
 import 'package:th.ac.ru.uSmart/model/affairs_list_data.dart';
 import 'package:th.ac.ru.uSmart/ruconnext_app_theme.dart';
 
@@ -97,8 +98,9 @@ class AffairsListView extends StatelessWidget {
                                                 Expanded(
                                                   child: ListTile(
                                                     title: Text(
-                                                        affairsData!.titleTxt,
-                                                        style: AppTheme.body1),
+                                                      affairsData!.titleTxt,
+                                                      style: AppTheme.title,
+                                                    ),
                                                   ),
                                                 ),
                                                 const SizedBox(
