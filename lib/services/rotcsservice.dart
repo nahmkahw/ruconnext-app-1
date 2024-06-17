@@ -9,7 +9,7 @@ import '../model/profile.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class RotcsService {
-  final appUrl = dotenv.env['APP_URL'];
+  final appUrl = dotenv.env['APP_URL_DEV'];
   final dioapi = DioIntercepter();
 
   Future<RotcsRegister> getRegisterAll() async {
@@ -30,13 +30,13 @@ class RotcsService {
         data: jsonEncode(params),
       );
       if (response.statusCode == 200) {
-        //print('Response Get Data : ${response.data}');
+        print('Response Get Data : ${response.data}');
         registerdata = RotcsRegister.fromJson(response.data);
       } else {
         throw ('Error Get Data Rotcs Register');
       }
     } catch (err) {
-      //print(err);
+      print(err);
       throw (err);
     }
 

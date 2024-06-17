@@ -16,12 +16,13 @@ class InsuranceStorage {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final insuranceString = prefs.getString(key);
     print('cache storage: $insuranceString');
-    if (insuranceString != null) {
-      final insuranceJson = jsonDecode(insuranceString);
-      return Insurance.fromJson(insuranceJson);
+    if (insuranceString == null) {
+      return Insurance();
+      
     }
 
-    return Insurance();
+    final insuranceJson = jsonDecode(insuranceString);
+      return Insurance.fromJson(insuranceJson);
   }
 
   static Future<void> remove() async {

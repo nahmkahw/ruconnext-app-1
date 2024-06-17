@@ -16,7 +16,7 @@ class InsuranceService {
     try {
       Profile profile = await ProfileStorage.getProfile();
       print('studentCode: ${profile.studentCode}');
-      profile.studentCode = '6401628414';
+      //profile.studentCode = '6401628414';
       var params = {"StudentCode": profile.studentCode};
       await dioapi.createIntercepter();
       var response = await dioapi.api.post(

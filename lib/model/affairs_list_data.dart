@@ -29,13 +29,13 @@ class AffairsListData {
       imagePath: 'assets/fitness_app/r18.png',
       titleTxt: 'ข้อมูลทุนของนักศึกษา',
       subTxt: 'ข้อมูลทุนของนักศึกษา',
-      navigateScreen: '/rotcs',
+      navigateScreen: '/affairs',
     ),
     AffairsListData(
       imagePath: 'assets/fitness_app/r18.png',
       titleTxt: 'ข้อมูลร่วมกิจกรรมต่างๆ ของนักศึกษา',
       subTxt: 'ข้อมูลร่วมกิจกรรมต่างๆ ของนักศึกษา',
-      navigateScreen: '/rotcs',
+      navigateScreen: '/affairs',
     ),
   ];
 }

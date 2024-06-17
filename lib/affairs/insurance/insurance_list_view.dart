@@ -27,14 +27,14 @@ class _InsuraceListViewState extends State<InsuraceListView>
 
   @override
   void initState() {
-    Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
+    //Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
     animationController = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     super.initState();
   }
 
   Future<bool> getData() async {
-    Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
+    //Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
     await Future<dynamic>.delayed(const Duration(milliseconds: 600));
     return true;
   }

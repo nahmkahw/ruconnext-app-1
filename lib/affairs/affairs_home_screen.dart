@@ -26,6 +26,8 @@ class _AffairsHomeScreenState extends State<AffairsHomeScreen>
   @override
   void initState() {
     Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
+    Provider.of<RotcsProvider>(context, listen: false).getAllRegister();
+    Provider.of<RotcsProvider>(context, listen: false).getAllExtend();
     animationController = AnimationController(
         duration: const Duration(milliseconds: 1000), vsync: this);
     super.initState();

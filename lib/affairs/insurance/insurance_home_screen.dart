@@ -5,7 +5,10 @@ import 'package:th.ac.ru.uSmart/fitness_app/fitness_app_theme.dart';
 import 'package:th.ac.ru.uSmart/fitness_app/models/tabIcon_data.dart';
 import 'package:flutter/material.dart';
 import 'package:th.ac.ru.uSmart/hotel_booking/hotel_app_theme.dart';
+import 'package:th.ac.ru.uSmart/login_page.dart';
+import 'package:th.ac.ru.uSmart/providers/authenprovider.dart';
 import 'package:th.ac.ru.uSmart/providers/insurance_provider.dart';
+import 'package:th.ac.ru.uSmart/providers/rotcs_provider.dart';
 
 String? tokenMr30;
 
@@ -26,8 +29,7 @@ class _InsuranceHomeScreenState extends State<InsuranceHomeScreen>
 
   @override
   void initState() {
-    Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
-
+    //Provider.of<InsuranceProvider>(context, listen: false).getInsuracneAll();
     tabIconsList.forEach((TabIconData tab) {
       tab.isSelected = false;
     });
@@ -49,7 +51,7 @@ class _InsuranceHomeScreenState extends State<InsuranceHomeScreen>
   Widget build(BuildContext context) {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;
-    //var authen = context.watch<AuthenProvider>();
+    var authen = context.watch<AuthenProvider>();
     return Theme(
       data: HotelAppTheme.buildLightTheme(),
       child: Container(
@@ -72,20 +74,20 @@ class _InsuranceHomeScreenState extends State<InsuranceHomeScreen>
                   ],
                 );
               } else {
-                return Stack(
-                  children: <Widget>[
-                    tabBody,
-                  ],
-                );
-              }
+                // return Stack(
+                //   children: <Widget>[
+                //     tabBody,
+                //   ],
+                // );
 
-              // return authen.isLoggedIn
-              //     ? Stack(
-              //         children: <Widget>[
-              //           tabBody,
-              //         ],
-              //       )
-              //     : LoginPage();
+                return authen.profile.accessToken != null
+                    ? Stack(
+                        children: <Widget>[
+                          tabBody,
+                        ],
+                      )
+                    : LoginPage();
+              }
             },
           ),
         ),
