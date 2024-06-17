@@ -15,7 +15,7 @@ class RotcsRegisterStorage {
   static Future<RotcsRegister> getRegister() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final registerString = prefs.getString(key);
-    print('cache storage: $registerString');
+    print('cache rotcs storage: $registerString');
     if (registerString != null) {
       final registerJson = jsonDecode(registerString);
       return RotcsRegister.fromJson(registerJson);
@@ -26,7 +26,7 @@ class RotcsRegisterStorage {
 
   static Future<void> removeRegister() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    print('clear cache....');
+    print('clear rotcs cache....');
     await prefs.setString(key, '{}');
   }
 }

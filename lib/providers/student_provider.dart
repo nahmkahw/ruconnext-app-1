@@ -23,13 +23,10 @@ class StudentProvider extends ChangeNotifier {
   Student _student = Student();
   Student get student => _student;
 
-
-
-
   Future<void> getImageProfile() async {
     //print("call getImageProfile");
     isLoading = true;
-    notifyListeners();
+    //notifyListeners();
     try {
       _service.context = _context;
       final response = await _service.getImageProfile();
@@ -55,13 +52,12 @@ class StudentProvider extends ChangeNotifier {
     await getImageProfile();
     await getStudent();
   }
-  
 
   Future<void> getStudent() async {
     isLoading = true;
     _error = '';
 
-    notifyListeners();
+    //notifyListeners();
     try {
       final response = await _service.getStudent();
       _student = response;
@@ -75,6 +71,4 @@ class StudentProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
-
- 
 }
